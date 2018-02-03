@@ -991,7 +991,7 @@ void Solver::toDimacs(FILE* f, const vec<Lit>& assumps)
 void Solver::printStats() const
 {
     double cpu_time = cpuTime();
-    double mem_used = memUsedPeak();
+    double mem_used = Minisat::memUsedPeak();
     printf("restarts              : %" PRIu64"\n", starts);
     printf("conflicts             : %-12" PRIu64"   (%.0f /sec)\n", conflicts   , conflicts   /cpu_time);
     printf("decisions             : %-12" PRIu64"   (%4.2f %% random) (%.0f /sec)\n", decisions, (float)rnd_decisions*100 / (float)decisions, decisions   /cpu_time);
